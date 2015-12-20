@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Synaptic Test</title>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="js/synaptic.js"></script>
+  <!-- <script src="js/vector.js"></script>
+    <script src="js/creature.js"></script>
+    <script src="js/main.js"></script> -->
+  <script src="js/script.js"></script>
+
+  <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+
+<body>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <h1>Synaptic XOR visualisation</h1>
+      <button class="btn btn-default" id="hideTable" type="button" name="button">Hide Info</button>
+      <div id="canvas-container">
+        <canvas id="myCanvas" height="200"></canvas>
+      </div>
+
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+
+      <table class="table table-hover table-bordered table-condensed ">
+
+        <caption> Iteration :
+          <span id="iteration"></span>
+        </caption>
+        <thead>
+          <th class="col-md-2">A</th>
+          <th class="col-md-2">B</th>
+          <th class="col-md-2">Expected</th>
+          <th class="col-md-3">Result</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td id="output1"></td>
+          </tr>
+          <tr>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td id="output2"></td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td id="output3"></td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td id="output4"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+
+
+
+
+</body>
+
+</html>
