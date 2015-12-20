@@ -16,19 +16,63 @@ $(document).ready(function() {
 
   ctx.fillStyle = "#00ff00";
   ctx.font = "12px Arial";
-  ctx.fillText("A[0,0]", 20, 190);
+  ctx.fillText("A[0,0]", 60, 190);
 
   ctx.fillStyle = "#ff3300";
   ctx.font = "12px Arial";
-  ctx.fillText("A[0,1]", 60, 190);
+  ctx.fillText("A[0,1]", 100, 190);
 
   ctx.fillStyle = "#ffff00";
   ctx.font = "12px Arial";
-  ctx.fillText("A[1,0]", 100, 190);
+  ctx.fillText("A[1,0]", 140, 190);
 
   ctx.fillStyle = "#33ccff";
   ctx.font = "12px Arial";
-  ctx.fillText("A[1,1]", 140, 190);
+  ctx.fillText("A[1,1]", 180, 190);
+
+  ctx.fillStyle = "#FFFFFF";
+  ctx.font = "12px Arial";
+  ctx.fillText("0", 25, 155);
+
+  ctx.fillStyle = "#FFFFFF";
+  ctx.font = "12px Arial";
+  ctx.fillText("0.5", 15, 105);
+
+  ctx.fillStyle = "#FFFFFF";
+  ctx.font = "12px Arial";
+  ctx.fillText("1", 25, 55);
+
+
+
+  //draw coordinate system
+
+  ctx.setLineDash([0, 0]);
+  ctx.beginPath();
+  ctx.moveTo(40, 150);
+  ctx.lineTo(canvas.width, 150);
+  ctx.strokeStyle = '#FFFFFF';
+  ctx.stroke();
+
+  ctx.setLineDash([5, 15]);
+  ctx.beginPath();
+  ctx.moveTo(40, 100);
+  ctx.lineTo(canvas.width, 100);
+  ctx.strokeStyle = '#FFFFFF';
+  ctx.stroke();
+
+  ctx.setLineDash([0, 0]);
+  ctx.beginPath();
+  ctx.moveTo(40, 50);
+  ctx.lineTo(canvas.width, 50);
+  ctx.strokeStyle = '#FFFFFF';
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(39, 0);
+  ctx.lineTo(39, 201);
+  ctx.strokeStyle = '#FFFFFF';
+  ctx.stroke();
+
 
   function draw(creature, canvas, color) {
     ctx.globalAlpha = 0.2;
@@ -45,8 +89,9 @@ $(document).ready(function() {
   }
 
 
-  $("#restartLoop").on("click", function() {
+  $("#startLoop").on("click", function() {
     myLoop();
+    $("#startLoop").prop('disabled', true);
   });
   var hideShowTable = 2;
   $("#hideTable").on("click", function() {
@@ -59,7 +104,7 @@ $(document).ready(function() {
     }
     hideShowTable++;
   });
-  
+
   // create the network
   var inputLayer = new Layer(2);
   var hiddenLayer = new Layer(3);
@@ -114,12 +159,6 @@ $(document).ready(function() {
       draw(creatures[2], canvas, "#ffff00");
       draw(creatures[3], canvas, "#33ccff");
 
-      // ctx.fillStyle = "#000000";
-      // ctx.fillRect(0, 0, 250, 40);
-      // ctx.fillStyle = "#FFFFFF";
-      // ctx.font = "30px Arial";
-      //
-      // ctx.fillText("Iteration " + i, 10, 35);
       data = {
         iteration: i,
         output1: output1, //000
@@ -137,5 +176,5 @@ $(document).ready(function() {
     }, 20);
   }
 
-  myLoop(); //  start the loop
+  // myLoop(); //  start the loop
 });
